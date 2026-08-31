@@ -1,0 +1,2994 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OneTouch Energy | Gestão Inteligente de Energia</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+
+<!-- =========================================================
+     ÁREA DE LOGIN / CADASTRO
+========================================================= -->
+
+<div id="areaLogin">
+
+
+    <!-- =====================================================
+         LOGIN
+    ====================================================== -->
+
+    <div id="telaLogin" class="auth-page">
+
+        <div class="auth-layout">
+
+
+            <section class="auth-brand">
+
+                <div class="auth-brand-content">
+
+                    <div class="brand-logo-large">
+                        <i data-lucide="zap"></i>
+                    </div>
+
+                    <span class="auth-eyebrow">
+                        ONETOUCH ENERGY
+                    </span>
+
+                    <h1>
+                        Inteligência para uma energia
+                        <span>mais eficiente.</span>
+                    </h1>
+
+                    <p>
+                        Monitore consumo, equipamentos e indicadores
+                        energéticos em uma única plataforma.
+                    </p>
+
+
+                    <div class="auth-benefits">
+
+                        <div class="auth-benefit">
+
+                            <div class="auth-benefit-icon">
+                                <i data-lucide="activity"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Monitoramento em tempo real
+                                </strong>
+
+                                <span>
+                                    Acompanhe os principais indicadores
+                                    da instalação.
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="auth-benefit">
+
+                            <div class="auth-benefit-icon">
+                                <i data-lucide="bell-ring"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Alertas inteligentes
+                                </strong>
+
+                                <span>
+                                    Identifique rapidamente alterações
+                                    e eventos importantes.
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="auth-benefit">
+
+                            <div class="auth-benefit-icon">
+                                <i data-lucide="chart-no-axes-combined"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Histórico de consumo
+                                </strong>
+
+                                <span>
+                                    Transforme dados energéticos
+                                    em decisões melhores.
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="auth-brand-footer">
+                    OneTouch Energy • Plataforma de gestão energética
+                </div>
+
+            </section>
+
+
+
+            <section class="auth-form-area">
+
+                <div class="login-box">
+
+
+                    <div class="mobile-brand">
+
+                        <div class="brand-logo">
+                            <i data-lucide="zap"></i>
+                        </div>
+
+                        <div>
+                            <strong>OneTouch</strong>
+                            <span>ENERGY</span>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="auth-heading">
+
+                        <span class="auth-small-title">
+                            ACESSO À PLATAFORMA
+                        </span>
+
+                        <h2>Bem-vindo</h2>
+
+                        <p>
+                            Entre com suas credenciais para acessar
+                            o painel de monitoramento.
+                        </p>
+
+                    </div>
+
+
+
+                    <form id="formLogin">
+
+
+                        <div class="campo">
+
+                            <label for="loginGmail">
+                                Gmail
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i data-lucide="mail"></i>
+
+                                <input
+                                    type="email"
+                                    id="loginGmail"
+                                    placeholder="exemplo@gmail.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="campo">
+
+                            <div class="label-row">
+
+                                <label for="loginSenha">
+                                    Senha
+                                </label>
+
+                                <button
+                                    type="button"
+                                    class="link-button"
+                                    onclick="mostrarTela('recuperar')"
+                                >
+                                    Esqueci minha senha
+                                </button>
+
+                            </div>
+
+
+                            <div class="input-wrapper">
+
+                                <i data-lucide="lock-keyhole"></i>
+
+                                <input
+                                    type="password"
+                                    id="loginSenha"
+                                    placeholder="Digite sua senha"
+                                    autocomplete="current-password"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <button
+                            type="submit"
+                            class="btn-primary"
+                        >
+
+                            <span>
+                                Entrar na plataforma
+                            </span>
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+
+                        <p
+                            class="mensagem"
+                            id="mensagemLogin"
+                        ></p>
+
+
+                    </form>
+
+
+
+                    <div class="auth-divider">
+
+                        <span></span>
+
+                        <p>ou</p>
+
+                        <span></span>
+
+                    </div>
+
+
+
+                    <button
+                        type="button"
+                        class="btn-secondary"
+                        onclick="mostrarTela('cadastro'); return false;"
+                    >
+                        Criar nova conta
+                    </button>
+
+
+
+                    <div class="auth-security">
+
+                        <i data-lucide="shield-check"></i>
+
+                        <span>
+                            Ambiente protegido e monitorado
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         CADASTRO
+    ====================================================== -->
+
+    <div
+        id="telaCadastro"
+        class="auth-page escondido"
+    >
+
+        <div class="auth-layout">
+
+
+            <section class="auth-brand">
+
+                <div class="auth-brand-content">
+
+                    <div class="brand-logo-large">
+                        <i data-lucide="zap"></i>
+                    </div>
+
+                    <span class="auth-eyebrow">
+                        ONETOUCH ENERGY
+                    </span>
+
+                    <h1>
+                        Comece a transformar
+                        <span>dados em eficiência.</span>
+                    </h1>
+
+                    <p>
+                        Cadastre sua conta para acessar a plataforma
+                        de monitoramento energético OneTouch.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <section class="auth-form-area">
+
+                <div class="login-box">
+
+
+                    <button
+                        type="button"
+                        class="back-button"
+                        onclick="mostrarTela('login')"
+                    >
+
+                        <i data-lucide="arrow-left"></i>
+
+                        Voltar
+
+                    </button>
+
+
+
+                    <div class="auth-heading">
+
+                        <span class="auth-small-title">
+                            NOVA CONTA
+                        </span>
+
+                        <h2>Criar conta</h2>
+
+                        <p>
+                            Preencha os dados abaixo
+                            para realizar seu cadastro.
+                        </p>
+
+                    </div>
+
+
+
+                    <form id="formCadastro">
+
+
+                        <div class="campo">
+
+                            <label for="nome">
+                                Nome completo
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i data-lucide="user"></i>
+
+                                <input
+                                    type="text"
+                                    id="nome"
+                                    placeholder="Seu nome completo"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="campo">
+
+                            <label for="gmail">
+                                Gmail
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i data-lucide="mail"></i>
+
+                                <input
+                                    type="email"
+                                    id="gmail"
+                                    placeholder="exemplo@gmail.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="campo">
+
+                            <label for="telefone">
+                                Telefone
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i data-lucide="phone"></i>
+
+                                <input
+                                    type="tel"
+                                    id="telefone"
+                                    placeholder="(11) 99999-9999"
+                                    autocomplete="tel"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="campo">
+
+                            <label for="senha">
+                                Senha
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i data-lucide="lock-keyhole"></i>
+
+                                <input
+                                    type="password"
+                                    id="senha"
+                                    placeholder="Mínimo 7 caracteres, com letra e número"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="campo">
+
+                            <label for="confirmarSenha">
+                                Confirmar senha
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i data-lucide="shield-check"></i>
+
+                                <input
+                                    type="password"
+                                    id="confirmarSenha"
+                                    placeholder="Digite a senha novamente"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <button
+                            type="submit"
+                            class="btn-primary"
+                        >
+
+                            <span>
+                                Criar minha conta
+                            </span>
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+
+                        <p
+                            class="mensagem"
+                            id="mensagemCadastro"
+                        ></p>
+
+
+                    </form>
+
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         RECUPERAR SENHA
+    ====================================================== -->
+
+    <div
+        id="telaRecuperar"
+        class="auth-page escondido"
+    >
+
+        <div class="auth-layout auth-layout-simple">
+
+
+            <section class="auth-form-area">
+
+                <div class="login-box">
+
+
+                    <button
+                        type="button"
+                        class="back-button"
+                        onclick="mostrarTela('login')"
+                    >
+
+                        <i data-lucide="arrow-left"></i>
+
+                        Voltar
+
+                    </button>
+
+
+
+                    <div class="recovery-icon">
+                        <i data-lucide="key-round"></i>
+                    </div>
+
+
+
+                    <div class="auth-heading">
+
+                        <span class="auth-small-title">
+                            RECUPERAÇÃO DE ACESSO
+                        </span>
+
+                        <h2>
+                            Recuperar senha
+                        </h2>
+
+                        <p>
+                            Confirme seu Gmail e telefone
+                            cadastrados para continuar.
+                        </p>
+
+                    </div>
+
+
+
+                    <form id="formRecuperar">
+
+
+                        <div class="campo">
+
+                            <label for="recuperarGmail">
+                                Gmail
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i data-lucide="mail"></i>
+
+                                <input
+                                    type="email"
+                                    id="recuperarGmail"
+                                    placeholder="exemplo@gmail.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="campo">
+
+                            <label for="recuperarTelefone">
+                                Telefone
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i data-lucide="phone"></i>
+
+                                <input
+                                    type="tel"
+                                    id="recuperarTelefone"
+                                    placeholder="(11) 99999-9999"
+                                    autocomplete="tel"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <button
+                            type="submit"
+                            class="btn-primary"
+                        >
+
+                            <span>
+                                Verificar dados
+                            </span>
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+
+                        <p
+                            class="mensagem"
+                            id="mensagemRecuperar"
+                        ></p>
+
+
+                    </form>
+
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         NOVA SENHA
+    ====================================================== -->
+
+    <div
+        id="telaNovaSenha"
+        class="auth-page escondido"
+    >
+
+        <div class="auth-layout auth-layout-simple">
+
+
+            <section class="auth-form-area">
+
+                <div class="login-box">
+
+
+                    <button
+                        type="button"
+                        class="back-button"
+                        onclick="mostrarTela('login')"
+                    >
+
+                        <i data-lucide="arrow-left"></i>
+
+                        Voltar
+
+                    </button>
+
+
+
+                    <div class="recovery-icon">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+
+
+
+                    <div class="auth-heading">
+
+                        <span class="auth-small-title">
+                            NOVA SENHA
+                        </span>
+
+                        <h2>
+                            Defina sua nova senha
+                        </h2>
+
+                        <p>
+                            Use no mínimo 7 caracteres,
+                            incluindo pelo menos uma letra
+                            e um número.
+                        </p>
+
+                    </div>
+
+
+
+                    <form id="formNovaSenha">
+
+
+                        <div class="campo">
+
+                            <label for="novaSenha">
+                                Nova senha
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i data-lucide="lock-keyhole"></i>
+
+                                <input
+                                    type="password"
+                                    id="novaSenha"
+                                    placeholder="Digite sua nova senha"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="campo">
+
+                            <label for="confirmarNovaSenha">
+                                Confirmar nova senha
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i data-lucide="shield-check"></i>
+
+                                <input
+                                    type="password"
+                                    id="confirmarNovaSenha"
+                                    placeholder="Digite novamente"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <button
+                            type="submit"
+                            class="btn-primary"
+                        >
+
+                            <span>
+                                Alterar senha
+                            </span>
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+
+                        <p
+                            class="mensagem"
+                            id="mensagemNovaSenha"
+                        ></p>
+
+
+                    </form>
+
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     SISTEMA
+========================================================= -->
+
+<div
+    id="sistemaOneTouch"
+    class="app escondido"
+>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+
+        <div class="sidebar-brand">
+
+            <div class="brand-logo">
+                <i data-lucide="zap"></i>
+            </div>
+
+            <div class="brand-name">
+
+                <strong>
+                    OneTouch
+                </strong>
+
+                <span>
+                    ENERGY
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="sidebar-content">
+
+
+            <span class="sidebar-section-title">
+                VISÃO GERAL
+            </span>
+
+
+            <nav class="sidebar-menu">
+
+
+                <a
+                    href="#"
+                    class="nav-item active"
+                    onclick="abrirPagina('inicio'); return false;"
+                >
+
+                    <i data-lucide="house"></i>
+
+                    <span>
+                        Início
+                    </span>
+
+                </a>
+
+
+
+                <a
+                    href="#"
+                    class="nav-item"
+                    onclick="abrirPagina('dashboard'); return false;"
+                >
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+            </nav>
+
+
+
+            <span class="sidebar-section-title">
+                GESTÃO
+            </span>
+
+
+            <nav class="sidebar-menu">
+
+
+                <a
+                    href="#"
+                    class="nav-item"
+                    onclick="abrirPagina('equipamentos'); return false;"
+                >
+
+                    <i data-lucide="cpu"></i>
+
+                    <span>
+                        Equipamentos
+                    </span>
+
+                </a>
+
+
+
+                <a
+                    href="#"
+                    class="nav-item"
+                    onclick="abrirPagina('historico'); return false;"
+                >
+
+                    <i data-lucide="chart-no-axes-combined"></i>
+
+                    <span>
+                        Histórico
+                    </span>
+
+                </a>
+
+
+
+                <a
+                    href="#"
+                    class="nav-item"
+                    onclick="abrirPagina('alertas'); return false;"
+                >
+
+                    <i data-lucide="bell"></i>
+
+                    <span>
+                        Alertas
+                    </span>
+
+                    <span class="nav-badge">
+                        3
+                    </span>
+
+                </a>
+
+
+            </nav>
+
+
+
+            <span class="sidebar-section-title">
+                SISTEMA
+            </span>
+
+
+            <nav class="sidebar-menu">
+
+
+                <a
+                    href="#"
+                    class="nav-item"
+                    onclick="abrirPagina('empresa'); return false;"
+                >
+
+                    <i data-lucide="building-2"></i>
+
+                    <span>
+                        Empresa
+                    </span>
+
+                </a>
+
+
+
+                <a
+                    href="#"
+                    class="nav-item"
+                >
+
+                    <i data-lucide="settings"></i>
+
+                    <span>
+                        Configurações
+                    </span>
+
+                </a>
+
+
+            </nav>
+
+
+        </div>
+
+
+
+        <div class="sidebar-footer">
+
+
+            <div class="system-status-mini">
+
+                <span class="status-dot"></span>
+
+                <div>
+
+                    <strong>
+                        Sistema operacional
+                    </strong>
+
+                    <span>
+                        Todos os serviços online
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="user-card">
+
+
+                <div class="user-avatar">
+                    OT
+                </div>
+
+
+                <div class="user-info">
+
+                    <strong id="usuarioNome">
+                        Usuário
+                    </strong>
+
+                    <span id="usuarioGmail">
+                        Conta OneTouch
+                    </span>
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    class="logout-button"
+                    onclick="sair(); return false;"
+                    title="Sair"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+
+            <div>
+
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    onclick="toggleSidebar()"
+                >
+
+                    <i data-lucide="menu"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <div class="topbar-actions">
+
+
+                <span class="demo-badge">
+                    DEMO
+                </span>
+
+
+                <button class="topbar-icon-button">
+
+                    <i data-lucide="search"></i>
+
+                </button>
+
+
+                <button
+                    class="topbar-icon-button notification-button"
+                >
+
+                    <i data-lucide="bell"></i>
+
+                    <span></span>
+
+                </button>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =====================================================
+             INÍCIO
+        ====================================================== -->
+
+        <section
+            class="pagina"
+            id="paginaInicio"
+        >
+
+
+            <div class="page-container">
+
+
+                <div class="welcome-panel">
+
+
+                    <div class="welcome-content">
+
+
+                        <span class="page-eyebrow">
+                            ONETOUCH ENERGY
+                        </span>
+
+
+                        <h1>
+                            Energia inteligente começa
+                            com dados melhores.
+                        </h1>
+
+
+                        <p>
+                            Monitore sua operação energética em tempo real,
+                            identifique oportunidades de economia e acompanhe
+                            a saúde da instalação em uma única plataforma.
+                        </p>
+
+
+
+                        <button
+                            class="welcome-button"
+                            onclick="abrirPagina('dashboard')"
+                        >
+
+                            Acessar dashboard
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+
+                    </div>
+
+
+
+                    <div class="welcome-visual">
+
+
+                        <div class="energy-visual-card">
+
+
+                            <div class="energy-ring">
+
+                                <div>
+
+                                    <i data-lucide="zap"></i>
+
+                                    <strong>
+                                        3,82
+                                    </strong>
+
+                                    <span>
+                                        kW agora
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="energy-mini-stats">
+
+
+                                <div>
+
+                                    <span>
+                                        Eficiência
+                                    </span>
+
+                                    <strong>
+                                        94%
+                                    </strong>
+
+                                </div>
+
+
+
+                                <div>
+
+                                    <span>
+                                        Economia
+                                    </span>
+
+                                    <strong>
+                                        8,4%
+                                    </strong>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="feature-grid">
+
+
+                    <button
+                        class="feature-card"
+                        onclick="abrirPagina('dashboard')"
+                    >
+
+                        <div class="feature-icon">
+                            <i data-lucide="layout-dashboard"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Dashboard
+                            </h3>
+
+                            <p>
+                                Visão consolidada dos principais
+                                indicadores energéticos.
+                            </p>
+
+                        </div>
+
+                        <i
+                            class="feature-arrow"
+                            data-lucide="arrow-up-right"
+                        ></i>
+
+                    </button>
+
+
+
+                    <button
+                        class="feature-card"
+                        onclick="abrirPagina('equipamentos')"
+                    >
+
+                        <div class="feature-icon">
+                            <i data-lucide="cpu"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Equipamentos
+                            </h3>
+
+                            <p>
+                                Acompanhe medidores, gateways
+                                e dispositivos conectados.
+                            </p>
+
+                        </div>
+
+                        <i
+                            class="feature-arrow"
+                            data-lucide="arrow-up-right"
+                        ></i>
+
+                    </button>
+
+
+
+                    <button
+                        class="feature-card"
+                        onclick="abrirPagina('historico')"
+                    >
+
+                        <div class="feature-icon">
+                            <i data-lucide="chart-no-axes-combined"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Histórico
+                            </h3>
+
+                            <p>
+                                Analise tendências e evolução
+                                do consumo energético.
+                            </p>
+
+                        </div>
+
+                        <i
+                            class="feature-arrow"
+                            data-lucide="arrow-up-right"
+                        ></i>
+
+                    </button>
+
+
+
+                    <button
+                        class="feature-card"
+                        onclick="abrirPagina('alertas')"
+                    >
+
+                        <div class="feature-icon">
+                            <i data-lucide="bell-ring"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Alertas
+                            </h3>
+
+                            <p>
+                                Visualize eventos importantes
+                                e possíveis anomalias.
+                            </p>
+
+                        </div>
+
+                        <i
+                            class="feature-arrow"
+                            data-lucide="arrow-up-right"
+                        ></i>
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             DASHBOARD
+        ====================================================== -->
+
+        <section
+            class="pagina escondido"
+            id="paginaDashboard"
+        >
+
+
+            <div class="page-container">
+
+
+                <div class="page-header">
+
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            VISÃO GERAL
+                        </span>
+
+                        <h1>
+                            Dashboard
+                        </h1>
+
+                        <p>
+                            Acompanhe o desempenho energético
+                            da sua instalação.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="page-header-actions">
+
+
+                        <div class="live-status">
+
+                            <span></span>
+
+                            Atualização em tempo real
+
+                        </div>
+
+
+                        <button class="date-button">
+
+                            <i data-lucide="calendar-days"></i>
+
+                            31 ago. 2026
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="dashboard-toolbar">
+
+
+                    <div class="period-filter">
+
+                        <button class="period-button active">
+                            Hoje
+                        </button>
+
+                        <button class="period-button">
+                            7 dias
+                        </button>
+
+                        <button class="period-button">
+                            30 dias
+                        </button>
+
+                        <button class="period-button">
+                            Personalizado
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="kpi-grid">
+
+
+                    <article class="kpi-card">
+
+                        <div class="kpi-header">
+
+                            <div class="kpi-icon accent">
+                                <i data-lucide="gauge"></i>
+                            </div>
+
+                            <span class="kpi-trend positive">
+                                -8,4%
+                            </span>
+
+                        </div>
+
+                        <span class="kpi-label">
+                            Consumo atual
+                        </span>
+
+                        <div class="kpi-value">
+                            3,82
+                            <small>kW</small>
+                        </div>
+
+                        <p>
+                            Comparado à média do período
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="kpi-card">
+
+                        <div class="kpi-header">
+
+                            <div class="kpi-icon">
+                                <i data-lucide="zap"></i>
+                            </div>
+
+                            <span class="kpi-trend positive">
+                                +2,1%
+                            </span>
+
+                        </div>
+
+                        <span class="kpi-label">
+                            Energia hoje
+                        </span>
+
+                        <div class="kpi-value">
+                            47,6
+                            <small>kWh</small>
+                        </div>
+
+                        <p>
+                            Acumulado desde 00h
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="kpi-card">
+
+                        <div class="kpi-header">
+
+                            <div class="kpi-icon">
+                                <i data-lucide="activity"></i>
+                            </div>
+
+                            <span class="kpi-tag">
+                                Normal
+                            </span>
+
+                        </div>
+
+                        <span class="kpi-label">
+                            Potência máxima
+                        </span>
+
+                        <div class="kpi-value">
+                            5,14
+                            <small>kW</small>
+                        </div>
+
+                        <p>
+                            Pico registrado às 14h
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="kpi-card">
+
+                        <div class="kpi-header">
+
+                            <div class="kpi-icon">
+                                <i data-lucide="wallet-cards"></i>
+                            </div>
+
+                            <span class="kpi-trend positive">
+                                -6,2%
+                            </span>
+
+                        </div>
+
+                        <span class="kpi-label">
+                            Custo estimado
+                        </span>
+
+                        <div class="kpi-value currency">
+                            R$ 38,40
+                        </div>
+
+                        <p>
+                            Estimativa do dia
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+
+
+                <div class="dashboard-main-grid">
+
+
+                    <article class="panel chart-panel">
+
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-eyebrow">
+                                    CONSUMO
+                                </span>
+
+                                <h2>
+                                    Perfil energético do dia
+                                </h2>
+
+                                <p>
+                                    Variação de potência ao longo
+                                    das últimas horas.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-container">
+
+                            <canvas id="energyChart"></canvas>
+
+                        </div>
+
+
+                    </article>
+
+
+
+                    <article class="panel health-panel">
+
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-eyebrow">
+                                    STATUS
+                                </span>
+
+                                <h2>
+                                    Saúde do sistema
+                                </h2>
+
+                                <p>
+                                    Conectividade e disponibilidade
+                                    dos serviços.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="health-score">
+
+                            <strong>
+                                98%
+                            </strong>
+
+                            <span>
+                                Operação saudável
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="health-list">
+
+
+                            <div class="health-item">
+
+                                <span>
+
+                                    <i data-lucide="wifi"></i>
+
+                                    Gateway principal
+
+                                </span>
+
+                                <strong>
+                                    Online
+                                </strong>
+
+                            </div>
+
+
+
+                            <div class="health-item">
+
+                                <span>
+
+                                    <i data-lucide="cpu"></i>
+
+                                    Medidor geral
+
+                                </span>
+
+                                <strong>
+                                    Online
+                                </strong>
+
+                            </div>
+
+
+
+                            <div class="health-item">
+
+                                <span>
+
+                                    <i data-lucide="database"></i>
+
+                                    Sincronização
+
+                                </span>
+
+                                <strong>
+                                    Atualizada
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </article>
+
+
+                </div>
+
+
+
+                <div class="dashboard-secondary-grid">
+
+
+                    <article class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-eyebrow">
+                                    EFICIÊNCIA
+                                </span>
+
+                                <h2>
+                                    Economia estimada
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+                        <div class="metric-highlight">
+
+                            <strong>
+                                R$ 126,80
+                            </strong>
+
+                            <span>
+                                economizados no mês
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-eyebrow">
+                                    DEMANDA
+                                </span>
+
+                                <h2>
+                                    Maior consumo
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+                        <div class="metric-highlight">
+
+                            <strong>
+                                14h
+                            </strong>
+
+                            <span>
+                                horário de maior demanda
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-eyebrow">
+                                    ALERTAS
+                                </span>
+
+                                <h2>
+                                    Eventos recentes
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+                        <div class="metric-highlight">
+
+                            <strong>
+                                3
+                            </strong>
+
+                            <span>
+                                eventos para acompanhamento
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             EQUIPAMENTOS
+        ====================================================== -->
+
+        <section
+            class="pagina escondido"
+            id="paginaEquipamentos"
+        >
+
+
+            <div class="page-container">
+
+
+                <div class="page-header">
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            INFRAESTRUTURA
+                        </span>
+
+                        <h1>
+                            Equipamentos
+                        </h1>
+
+                        <p>
+                            Dispositivos conectados à instalação.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="equipment-grid">
+
+
+                    <article class="equipment-card">
+
+                        <div class="equipment-card-top">
+
+                            <div class="equipment-icon">
+                                <i data-lucide="router"></i>
+                            </div>
+
+                            <span class="status-pill online">
+                                Online
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Gateway principal
+                        </h3>
+
+                        <p>
+                            Central de comunicação da instalação.
+                        </p>
+
+                        <div class="equipment-meta">
+
+                            <span>
+                                Última leitura
+                            </span>
+
+                            <strong>
+                                Agora
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="equipment-card">
+
+                        <div class="equipment-card-top">
+
+                            <div class="equipment-icon">
+                                <i data-lucide="gauge"></i>
+                            </div>
+
+                            <span class="status-pill online">
+                                Online
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Medidor geral
+                        </h3>
+
+                        <p>
+                            Monitoramento do consumo consolidado.
+                        </p>
+
+                        <div class="equipment-meta">
+
+                            <span>
+                                Potência atual
+                            </span>
+
+                            <strong>
+                                3,82 kW
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="equipment-card">
+
+                        <div class="equipment-card-top">
+
+                            <div class="equipment-icon">
+                                <i data-lucide="server-cog"></i>
+                            </div>
+
+                            <span class="status-pill warning">
+                                Atenção
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Quadro secundário
+                        </h3>
+
+                        <p>
+                            Monitoramento setorizado da operação.
+                        </p>
+
+                        <div class="equipment-meta">
+
+                            <span>
+                                Última leitura
+                            </span>
+
+                            <strong>
+                                2 min atrás
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+
+                <article class="panel architecture-panel">
+
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                ARQUITETURA
+                            </span>
+
+                            <h2>
+                                Fluxo do sistema
+                            </h2>
+
+                            <p>
+                                Visão simplificada da coleta
+                                e processamento dos dados.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="architecture-flow">
+
+
+                        <div class="architecture-node">
+
+                            <i data-lucide="gauge"></i>
+
+                            <strong>
+                                Medidores
+                            </strong>
+
+                            <span>
+                                Coleta
+                            </span>
+
+                        </div>
+
+
+                        <i data-lucide="arrow-right"></i>
+
+
+                        <div class="architecture-node">
+
+                            <i data-lucide="router"></i>
+
+                            <strong>
+                                Gateway
+                            </strong>
+
+                            <span>
+                                Comunicação
+                            </span>
+
+                        </div>
+
+
+                        <i data-lucide="arrow-right"></i>
+
+
+                        <div class="architecture-node">
+
+                            <i data-lucide="cloud"></i>
+
+                            <strong>
+                                Cloud
+                            </strong>
+
+                            <span>
+                                Processamento
+                            </span>
+
+                        </div>
+
+
+                        <i data-lucide="arrow-right"></i>
+
+
+                        <div class="architecture-node">
+
+                            <i data-lucide="layout-dashboard"></i>
+
+                            <strong>
+                                Dashboard
+                            </strong>
+
+                            <span>
+                                Visualização
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             HISTÓRICO
+        ====================================================== -->
+
+        <section
+            class="pagina escondido"
+            id="paginaHistorico"
+        >
+
+
+            <div class="page-container">
+
+
+                <div class="page-header">
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            ANÁLISE
+                        </span>
+
+                        <h1>
+                            Histórico
+                        </h1>
+
+                        <p>
+                            Consulte a evolução do consumo
+                            ao longo do tempo.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <article class="panel">
+
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                ÚLTIMOS 7 DIAS
+                            </span>
+
+                            <h2>
+                                Consumo acumulado
+                            </h2>
+
+                            <p>
+                                Resumo energético
+                                do período selecionado.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="history-summary-grid">
+
+
+                        <div>
+
+                            <span>
+                                Consumo
+                            </span>
+
+                            <strong>
+                                324,8 kWh
+                            </strong>
+
+                        </div>
+
+
+
+                        <div>
+
+                            <span>
+                                Custo estimado
+                            </span>
+
+                            <strong>
+                                R$ 261,40
+                            </strong>
+
+                        </div>
+
+
+
+                        <div>
+
+                            <span>
+                                Média diária
+                            </span>
+
+                            <strong>
+                                46,4 kWh
+                            </strong>
+
+                        </div>
+
+
+
+                        <div>
+
+                            <span>
+                                Economia
+                            </span>
+
+                            <strong>
+                                7,9%
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ALERTAS
+        ====================================================== -->
+
+        <section
+            class="pagina escondido"
+            id="paginaAlertas"
+        >
+
+
+            <div class="page-container">
+
+
+                <div class="page-header">
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            MONITORAMENTO
+                        </span>
+
+                        <h1>
+                            Alertas
+                        </h1>
+
+                        <p>
+                            Eventos que merecem atenção
+                            da operação.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="alerts-list">
+
+
+                    <article class="alert-card warning">
+
+                        <div class="alert-icon">
+
+                            <i data-lucide="triangle-alert"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span class="alert-time">
+                                Hoje, 14:18
+                            </span>
+
+                            <h3>
+                                Pico de demanda identificado
+                            </h3>
+
+                            <p>
+                                A potência ultrapassou a média
+                                operacional durante 12 minutos.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="alert-card info">
+
+                        <div class="alert-icon">
+
+                            <i data-lucide="info"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span class="alert-time">
+                                Hoje, 11:02
+                            </span>
+
+                            <h3>
+                                Sincronização concluída
+                            </h3>
+
+                            <p>
+                                Todos os dados dos equipamentos
+                                foram atualizados com sucesso.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="alert-card success">
+
+                        <div class="alert-icon">
+
+                            <i data-lucide="circle-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span class="alert-time">
+                                Ontem, 18:40
+                            </span>
+
+                            <h3>
+                                Meta de economia atingida
+                            </h3>
+
+                            <p>
+                                O consumo ficou abaixo da referência
+                                definida para o período.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             EMPRESA
+        ====================================================== -->
+
+        <section
+            class="pagina escondido"
+            id="paginaEmpresa"
+        >
+
+
+            <div class="page-container">
+
+
+                <div class="page-header">
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            CONTA
+                        </span>
+
+                        <h1>
+                            Empresa
+                        </h1>
+
+                        <p>
+                            Informações da conta
+                            e da instalação monitorada.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <article class="panel">
+
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                DADOS DA CONTA
+                            </span>
+
+                            <h2>
+                                Responsável
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="history-summary-grid">
+
+
+                        <div>
+
+                            <span>
+                                ID do usuário
+                            </span>
+
+                            <strong id="usuarioId"></strong>
+
+                        </div>
+
+
+
+                        <div>
+
+                            <span>
+                                Telefone
+                            </span>
+
+                            <strong id="usuarioTelefone"></strong>
+
+                        </div>
+
+
+
+                        <div>
+
+                            <span>
+                                Data de cadastro
+                            </span>
+
+                            <strong id="usuarioDataRegistro"></strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT DO SISTEMA
+========================================================= -->
+
+<script src="script.js"></script>
+
+
+<script>
+
+
+    /* =========================================================
+       LUCIDE
+    ========================================================= */
+
+    function atualizarIcones() {
+
+        if (
+            typeof lucide !== "undefined"
+        ) {
+
+            lucide.createIcons();
+
+        }
+
+    }
+
+
+
+    /* =========================================================
+       SIDEBAR MOBILE
+    ========================================================= */
+
+    function toggleSidebar() {
+
+        const sidebar =
+            document.querySelector(
+                ".sidebar"
+            );
+
+
+        if (sidebar) {
+
+            sidebar.classList.toggle(
+                "open"
+            );
+
+        }
+
+    }
+
+
+
+    /* =========================================================
+       CARREGAMENTO
+    ========================================================= */
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+
+
+            atualizarIcones();
+
+
+
+            /* =================================================
+               MENU ATIVO
+            ================================================= */
+
+            document
+                .querySelectorAll(
+                    ".nav-item"
+                )
+                .forEach(
+                    function (item) {
+
+
+                        item.addEventListener(
+                            "click",
+                            function () {
+
+
+                                document
+                                    .querySelectorAll(
+                                        ".nav-item"
+                                    )
+                                    .forEach(
+                                        function (nav) {
+
+                                            nav.classList.remove(
+                                                "active"
+                                            );
+
+                                        }
+                                    );
+
+
+                                this.classList.add(
+                                    "active"
+                                );
+
+
+                                if (
+                                    window.innerWidth <= 900
+                                ) {
+
+                                    const sidebar =
+                                        document.querySelector(
+                                            ".sidebar"
+                                        );
+
+
+                                    if (sidebar) {
+
+                                        sidebar.classList.remove(
+                                            "open"
+                                        );
+
+                                    }
+
+                                }
+
+
+                                setTimeout(
+                                    atualizarIcones,
+                                    30
+                                );
+
+                            }
+                        );
+
+
+                    }
+                );
+
+
+
+            /* =================================================
+               FILTRO DE PERÍODO
+            ================================================= */
+
+            document
+                .querySelectorAll(
+                    ".period-filter"
+                )
+                .forEach(
+                    function (grupo) {
+
+
+                        grupo
+                            .querySelectorAll(
+                                ".period-button"
+                            )
+                            .forEach(
+                                function (botao) {
+
+
+                                    botao.addEventListener(
+                                        "click",
+                                        function () {
+
+
+                                            grupo
+                                                .querySelectorAll(
+                                                    ".period-button"
+                                                )
+                                                .forEach(
+                                                    function (item) {
+
+                                                        item.classList.remove(
+                                                            "active"
+                                                        );
+
+                                                    }
+                                                );
+
+
+                                            this.classList.add(
+                                                "active"
+                                            );
+
+
+                                        }
+                                    );
+
+
+                                }
+                            );
+
+
+                    }
+                );
+
+
+
+            /* =================================================
+               GRÁFICO
+            ================================================= */
+
+            const canvas =
+                document.getElementById(
+                    "energyChart"
+                );
+
+
+            if (
+                canvas &&
+                typeof Chart !== "undefined"
+            ) {
+
+
+                const ctx =
+                    canvas.getContext(
+                        "2d"
+                    );
+
+
+                const gradient =
+                    ctx.createLinearGradient(
+                        0,
+                        0,
+                        0,
+                        300
+                    );
+
+
+                gradient.addColorStop(
+                    0,
+                    "rgba(18, 184, 196, 0.22)"
+                );
+
+
+                gradient.addColorStop(
+                    1,
+                    "rgba(18, 184, 196, 0)"
+                );
+
+
+
+                new Chart(
+                    ctx,
+                    {
+
+                        type:
+                            "line",
+
+
+                        data: {
+
+                            labels: [
+
+                                "00h",
+                                "02h",
+                                "04h",
+                                "06h",
+                                "08h",
+                                "10h",
+                                "12h",
+                                "14h",
+                                "16h",
+                                "18h",
+                                "20h",
+                                "22h"
+
+                            ],
+
+
+                            datasets: [
+
+                                {
+
+                                    label:
+                                        "Consumo",
+
+                                    data: [
+
+                                        2.4,
+                                        2.1,
+                                        1.9,
+                                        2.3,
+                                        3.4,
+                                        4.1,
+                                        3.7,
+                                        5.14,
+                                        4.3,
+                                        3.82,
+                                        3.4,
+                                        2.9
+
+                                    ],
+
+                                    borderColor:
+                                        "#12b8c4",
+
+                                    backgroundColor:
+                                        gradient,
+
+                                    borderWidth:
+                                        2.5,
+
+                                    pointRadius:
+                                        0,
+
+                                    pointHoverRadius:
+                                        5,
+
+                                    fill:
+                                        true,
+
+                                    tension:
+                                        0.42
+
+                                }
+
+                            ]
+
+                        },
+
+
+                        options: {
+
+                            responsive:
+                                true,
+
+                            maintainAspectRatio:
+                                false,
+
+
+                            interaction: {
+
+                                intersect:
+                                    false,
+
+                                mode:
+                                    "index"
+
+                            },
+
+
+                            plugins: {
+
+                                legend: {
+
+                                    display:
+                                        false
+
+                                },
+
+
+                                tooltip: {
+
+                                    backgroundColor:
+                                        "#0b2239",
+
+                                    displayColors:
+                                        false,
+
+
+                                    callbacks: {
+
+                                        label:
+                                            function (
+                                                context
+                                            ) {
+
+                                                return (
+                                                    "Consumo: " +
+                                                    context.parsed.y +
+                                                    " kW"
+                                                );
+
+                                            }
+
+                                    }
+
+                                }
+
+                            },
+
+
+                            scales: {
+
+
+                                x: {
+
+                                    grid: {
+
+                                        display:
+                                            false
+
+                                    },
+
+                                    border: {
+
+                                        display:
+                                            false
+
+                                    }
+
+                                },
+
+
+                                y: {
+
+                                    beginAtZero:
+                                        true,
+
+                                    suggestedMax:
+                                        6,
+
+                                    grid: {
+
+                                        color:
+                                            "#edf1f4"
+
+                                    },
+
+                                    border: {
+
+                                        display:
+                                            false
+
+                                    },
+
+                                    ticks: {
+
+                                        callback:
+                                            function (
+                                                value
+                                            ) {
+
+                                                return (
+                                                    value +
+                                                    " kW"
+                                                );
+
+                                            }
+
+                                    }
+
+                                }
+
+
+                            }
+
+
+                        }
+
+
+                    }
+                );
+
+
+            }
+
+
+        }
+    );
+
+
+</script>
+
+
+</body>
+</html>
