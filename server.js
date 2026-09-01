@@ -6,9 +6,18 @@ const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 require("dotenv").config();
 
+const path = require("path");
+
 const app = express();
 
 const PORT = Number(process.env.PORT) || 3000;
+
+app.use(express.static(__dirname));
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
+
 
 /* =====================================================
    CONFIGURAÇÕES DE SEGURANÇA
