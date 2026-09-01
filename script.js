@@ -473,20 +473,54 @@ if (formLogin) {
                     .getElementById("loginSenha")
                     .value;
 
+/* =====================================================
+   ACESSO DEMONSTRAÇÃO
+===================================================== */
 
-            const mensagem =
-                document
-                    .getElementById("mensagemLogin");
+if (
+    gmail === "demo@onetouch.com" &&
+    senha === "demo123"
+) {
 
+    usuarioLogado = {
+        id: "DEMO",
+        nome: "OneTouch Demo",
+        gmail: "demo@onetouch.com",
+        telefone: "",
+        data_registro: new Date().toISOString(),
+        nivel: "admin"
+    };
 
-            mensagem.style.color =
-                "#243b55";
+    mensagem.style.color = "green";
+    mensagem.textContent = "✅ Acesso à demonstração liberado!";
 
+    setTimeout(function() {
 
-            mensagem.textContent =
-                "⏳ Verificando login...";
+        const areaLogin =
+            document.getElementById("areaLogin");
 
+        const sistema =
+            document.getElementById("sistemaOneTouch");
 
+        if (areaLogin) {
+            areaLogin.classList.add("escondido");
+        }
+
+        if (sistema) {
+            sistema.classList.remove("escondido");
+        }
+
+        abrirPagina("dashboard");
+
+        atualizarDadosUsuario();
+
+        mensagem.textContent = "";
+
+    }, 500);
+
+    return;
+}
+    
             /* =================================================
                ENVIAR LOGIN
             ================================================= */
