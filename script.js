@@ -478,6 +478,7 @@ const mensagem =
 
 mensagem.style.color = "#243b55";
 mensagem.textContent = "⌛ Verificando login...";
+
 /* =====================================================
    ACESSO DEMONSTRAÇÃO
 ===================================================== */
