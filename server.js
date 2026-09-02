@@ -12,10 +12,20 @@ const app = express();
 
 const PORT = Number(process.env.PORT) || 3000;
 
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname)));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.get("/style.css", (req, res) => {
+    res.type("text/css");
+    res.sendFile(path.join(__dirname, "style.css"));
+});
+
+app.get("/script.js", (req, res) => {
+    res.type("application/javascript");
+    res.sendFile(path.join(__dirname, "script.js"));
 });
 
 
