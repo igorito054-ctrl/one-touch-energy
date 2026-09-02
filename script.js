@@ -472,7 +472,12 @@ if (formLogin) {
                 document
                     .getElementById("loginSenha")
                     .value;
+const mensagem =
+    document
+        .getElementById("mensagemLogin");
 
+mensagem.style.color = "#243b55";
+mensagem.textContent = "⌛ Verificando login...";
 /* =====================================================
    ACESSO DEMONSTRAÇÃO
 ===================================================== */
@@ -481,7 +486,6 @@ if (
     gmail === "demo@onetouch.com" &&
     senha === "demo123"
 ) {
-
     usuarioLogado = {
         id: "DEMO",
         nome: "OneTouch Demo",
