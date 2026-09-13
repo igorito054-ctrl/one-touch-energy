@@ -16,6 +16,8 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -44,7 +46,7 @@
                 <div class="auth-brand-content">
 
                     <div class="brand-logo-large">
-                        <i data-lucide="zap"></i>
+                        <img src="logo-onetouch-icon.png" alt="OneTouch" style="width:72%;height:72%;object-fit:contain;display:block;">
                     </div>
 
                     <span class="auth-eyebrow">
@@ -144,7 +146,7 @@
                     <div class="mobile-brand">
 
                         <div class="brand-logo">
-                            <i data-lucide="zap"></i>
+                            <img src="logo-onetouch-icon.png" alt="OneTouch" style="width:72%;height:72%;object-fit:contain;display:block;">
                         </div>
 
                         <div>
@@ -179,7 +181,7 @@
                         <div class="campo">
 
                             <label for="loginGmail">
-                                Gmail
+                                E-mail
                             </label>
 
                             <div class="input-wrapper">
@@ -189,7 +191,7 @@
                                 <input
                                     type="email"
                                     id="loginGmail"
-                                    placeholder="exemplo@gmail.com"
+                                    placeholder="nome@empresa.com"
                                     autocomplete="email"
                                     required
                                 >
@@ -321,7 +323,7 @@
                 <div class="auth-brand-content">
 
                     <div class="brand-logo-large">
-                        <i data-lucide="zap"></i>
+                        <img src="logo-onetouch-icon.png" alt="OneTouch" style="width:72%;height:72%;object-fit:contain;display:block;">
                     </div>
 
                     <span class="auth-eyebrow">
@@ -410,7 +412,7 @@
                         <div class="campo">
 
                             <label for="gmail">
-                                Gmail
+                                E-mail
                             </label>
 
                             <div class="input-wrapper">
@@ -420,7 +422,7 @@
                                 <input
                                     type="email"
                                     id="gmail"
-                                    placeholder="exemplo@gmail.com"
+                                    placeholder="nome@empresa.com"
                                     autocomplete="email"
                                     required
                                 >
@@ -452,6 +454,53 @@
                             </div>
 
                         </div>
+
+
+
+<div class="campo">
+
+    <label for="empresa">
+        Empresa
+    </label>
+
+    <div class="input-wrapper">
+
+        <i data-lucide="building-2"></i>
+
+        <input
+            type="text"
+            id="empresa"
+            placeholder="Nome da empresa"
+            autocomplete="organization"
+            required
+        >
+
+    </div>
+
+</div>
+
+
+<div class="campo">
+
+    <label for="endereco">
+        Endereço da empresa ou unidade
+    </label>
+
+    <div class="input-wrapper">
+
+        <i data-lucide="map-pin"></i>
+
+        <input
+            type="text"
+            id="endereco"
+            placeholder="Rua, número, bairro e cidade"
+            autocomplete="street-address"
+            required
+        >
+
+    </div>
+
+</div>
 
 
 
@@ -598,7 +647,7 @@
                         <div class="campo">
 
                             <label for="recuperarGmail">
-                                Gmail
+                                E-mail
                             </label>
 
                             <div class="input-wrapper">
@@ -608,7 +657,7 @@
                                 <input
                                     type="email"
                                     id="recuperarGmail"
-                                    placeholder="exemplo@gmail.com"
+                                    placeholder="nome@empresa.com"
                                     autocomplete="email"
                                     required
                                 >
@@ -840,7 +889,7 @@
         <div class="sidebar-brand">
 
             <div class="brand-logo">
-                <i data-lucide="zap"></i>
+                <img src="logo-onetouch-icon.png" alt="OneTouch" style="width:72%;height:72%;object-fit:contain;display:block;">
             </div>
 
             <div class="brand-name">
@@ -928,6 +977,22 @@
                 </a>
 
 
+                <a
+                    href="#"
+                    class="nav-item"
+                    id="navControladores" style="display:none;"
+                    onclick="abrirPagina('controladores'); return false;"
+                >
+
+                    <i data-lucide="router"></i>
+
+                    <span>
+                        Controladores
+                    </span>
+
+                </a>
+
+
 
                 <a
                     href="#"
@@ -957,11 +1022,24 @@
                         Alertas
                     </span>
 
-                    <span class="nav-badge">
-                        3
-                    </span>
+                    <span class="nav-badge" id="alertasNavBadge" style="display:none;">0</span>
 
                 </a>
+
+
+<a
+    href="#"
+    class="nav-item"
+    onclick="abrirPagina('suporte'); return false;"
+>
+
+    <i data-lucide="headset"></i>
+
+    <span>
+        Suporte
+    </span>
+
+</a>
 
 
             </nav>
@@ -995,6 +1073,7 @@
                 <a
                     href="#"
                     class="nav-item"
+                        onclick="abrirPagina('configuracoes'); return false;"
                 >
 
                     <i data-lucide="settings"></i>
@@ -1109,14 +1188,7 @@
 
 
             <div class="topbar-actions">
-
-
-                <span class="demo-badge">
-                    DEMO
-                </span>
-
-
-                <button class="topbar-icon-button">
+<button class="topbar-icon-button">
 
                     <i data-lucide="search"></i>
 
@@ -1142,262 +1214,342 @@
 
 
         <!-- =====================================================
-             INÍCIO
-        ====================================================== -->
+     INÍCIO / FLUXO ENERGÉTICO
+====================================================== -->
 
-        <section
-            class="pagina"
-            id="paginaInicio"
-        >
+<section
+    class="pagina"
+    id="paginaInicio"
+>
 
+    <div class="page-container energy-flow-page">
 
-            <div class="page-container">
+        <div class="page-header energy-flow-page-header">
 
+            <div>
+                <span class="page-eyebrow">
+                    MONITORAMENTO EM TEMPO REAL
+                </span>
 
-                <div class="welcome-panel">
+                <h1>
+                    Fluxo de energia
+                </h1>
 
+                <p>
+                    Acompanhe geração solar, rede elétrica,
+                    armazenamento e consumo em uma única visão.
+                </p>
+            </div>
 
-                    <div class="welcome-content">
+            <div class="energy-flow-live" id="telemetriaStatusInicio">
+                <span></span>
+                Verificando telemetria
+            </div>
 
-
-                        <span class="page-eyebrow">
-                            ONETOUCH ENERGY
-                        </span>
-
-
-                        <h1>
-                            Energia inteligente começa
-                            com dados melhores.
-                        </h1>
-
-
-                        <p>
-                            Monitore sua operação energética em tempo real,
-                            identifique oportunidades de economia e acompanhe
-                            a saúde da instalação em uma única plataforma.
-                        </p>
-
+        </div>
 
 
-                        <button
-                            class="welcome-button"
-                            onclick="abrirPagina('dashboard')"
-                        >
+        
+                <article
+                    class="panel escondido"
+                    id="installationSetupPanel"
+                    style="margin-bottom:24px;"
+                >
 
-                            Acessar dashboard
+                    <div class="panel-header">
 
-                            <i data-lucide="arrow-right"></i>
+                        <div>
+                            <span class="panel-eyebrow">
+                                CONFIGURAÇÃO DA INSTALAÇÃO
+                            </span>
 
-                        </button>
+                            <h2 id="installationSetupTitle">
+                                Configure sua instalação
+                            </h2>
 
+                            <p id="installationSetupDescription">
+                                Antes de liberar os dados energéticos,
+                                envie as informações do equipamento para análise da equipe OneTouch.
+                            </p>
+                        </div>
 
                     </div>
 
+                    <form
+                        id="installationRequestForm"
+                        class="controllers-form"
+                    >
 
+                        <div class="controllers-field">
+                            <label for="installationName">
+                                Nome da instalação
+                            </label>
 
-                    <div class="welcome-visual">
+                            <input
+                                type="text"
+                                id="installationName"
+                                placeholder="Ex.: Casa principal"
+                                required
+                            >
+                        </div>
 
+                        <div class="controllers-field">
+                            <label for="installationAddress">
+                                Endereço da instalação
+                            </label>
 
-                        <div class="energy-visual-card">
+                            <input
+                                type="text"
+                                id="installationAddress"
+                                placeholder="Rua, número, cidade"
+                                required
+                            >
+                        </div>
 
+                        <div class="controllers-field">
+                            <label for="installationEquipment">
+                                Equipamento
+                            </label>
 
-                            <div class="energy-ring">
+                            <input
+                                type="text"
+                                id="installationEquipment"
+                                placeholder="Ex.: EP Cube"
+                                required
+                            >
+                        </div>
 
-                                <div>
+                        <div class="controllers-field">
+                            <label for="installationModel">
+                                Modelo
+                            </label>
 
-                                    <i data-lucide="zap"></i>
+                            <input
+                                type="text"
+                                id="installationModel"
+                                placeholder="Opcional"
+                            >
+                        </div>
 
-                                    <strong>
-                                        3,82
-                                    </strong>
+                        <div class="controllers-field">
+                            <label for="installationSerial">
+                                Serial / NS
+                            </label>
 
-                                    <span>
-                                        kW agora
-                                    </span>
+                            <input
+                                type="text"
+                                id="installationSerial"
+                                placeholder="Número de série do equipamento"
+                                required
+                            >
+                        </div>
 
-                                </div>
+                        <div class="controllers-field">
+                            <label for="installationNotes">
+                                Observações
+                            </label>
 
-                            </div>
+                            <textarea
+                                id="installationNotes"
+                                rows="4"
+                                placeholder="Informações adicionais para o administrador"
+                            ></textarea>
+                        </div>
 
+                        <div class="controllers-form-actions">
 
-
-                            <div class="energy-mini-stats">
-
-
-                                <div>
-
-                                    <span>
-                                        Eficiência
-                                    </span>
-
-                                    <strong>
-                                        94%
-                                    </strong>
-
-                                </div>
-
-
-
-                                <div>
-
-                                    <span>
-                                        Economia
-                                    </span>
-
-                                    <strong>
-                                        8,4%
-                                    </strong>
-
-                                </div>
-
-
-                            </div>
-
+                            <button
+                                type="submit"
+                                class="controllers-btn-primary"
+                                id="installationSubmitButton"
+                            >
+                                <i data-lucide="send"></i>
+                                Enviar para análise
+                            </button>
 
                         </div>
 
+                    </form>
 
+                    <p
+                        id="installationRequestMessage"
+                        class="controllers-form-message"
+                    ></p>
+
+                </article>
+
+
+                
+                <article
+                    class="panel escondido"
+                    id="semTelemetriaInicio"
+                    style="margin-bottom:24px;"
+                >
+                    <div class="panel-header">
+                        <div>
+                            <span class="panel-eyebrow">SEM_TELEMETRIA</span>
+                            <h2>Sem dados de energia</h2>
+                            <p>
+                                Nenhum controlador ou equipamento com telemetria real está conectado a esta instalação.
+                                Os dados aparecerão automaticamente após a primeira leitura válida.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+<section class="energy-flow-section energy-flow-standalone">
+
+            <div class="energy-flow-card">
+
+                <div class="flow-node flow-node-grid">
+
+                    <div class="flow-node-icon">
+                        <i data-lucide="tower-control"></i>
                     </div>
 
+                    <span>Rede elétrica</span>
+
+                    <strong>
+                        4,97
+                        <small>kW</small>
+                    </strong>
+
+                    <em>
+                        Importando
+                    </em>
 
                 </div>
 
 
+                <div class="flow-node flow-node-solar">
 
-                <div class="feature-grid">
+                    <div class="flow-node-icon">
+                        <i data-lucide="sun"></i>
+                    </div>
 
+                    <span>Solar</span>
 
-                    <button
-                        class="feature-card"
-                        onclick="abrirPagina('dashboard')"
-                    >
+                    <strong>
+                        6,99
+                        <small>kW</small>
+                    </strong>
 
-                        <div class="feature-icon">
-                            <i data-lucide="layout-dashboard"></i>
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Dashboard
-                            </h3>
-
-                            <p>
-                                Visão consolidada dos principais
-                                indicadores energéticos.
-                            </p>
-
-                        </div>
-
-                        <i
-                            class="feature-arrow"
-                            data-lucide="arrow-up-right"
-                        ></i>
-
-                    </button>
-
-
-
-                    <button
-                        class="feature-card"
-                        onclick="abrirPagina('equipamentos')"
-                    >
-
-                        <div class="feature-icon">
-                            <i data-lucide="cpu"></i>
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Equipamentos
-                            </h3>
-
-                            <p>
-                                Acompanhe medidores, gateways
-                                e dispositivos conectados.
-                            </p>
-
-                        </div>
-
-                        <i
-                            class="feature-arrow"
-                            data-lucide="arrow-up-right"
-                        ></i>
-
-                    </button>
-
-
-
-                    <button
-                        class="feature-card"
-                        onclick="abrirPagina('historico')"
-                    >
-
-                        <div class="feature-icon">
-                            <i data-lucide="chart-no-axes-combined"></i>
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Histórico
-                            </h3>
-
-                            <p>
-                                Analise tendências e evolução
-                                do consumo energético.
-                            </p>
-
-                        </div>
-
-                        <i
-                            class="feature-arrow"
-                            data-lucide="arrow-up-right"
-                        ></i>
-
-                    </button>
-
-
-
-                    <button
-                        class="feature-card"
-                        onclick="abrirPagina('alertas')"
-                    >
-
-                        <div class="feature-icon">
-                            <i data-lucide="bell-ring"></i>
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Alertas
-                            </h3>
-
-                            <p>
-                                Visualize eventos importantes
-                                e possíveis anomalias.
-                            </p>
-
-                        </div>
-
-                        <i
-                            class="feature-arrow"
-                            data-lucide="arrow-up-right"
-                        ></i>
-
-                    </button>
-
+                    <em>
+                        Gerando
+                    </em>
 
                 </div>
 
+
+                <div class="flow-core">
+
+                    <div class="flow-core-ring">
+
+                        <div class="flow-core-inner">
+
+                            <i data-lucide="battery-charging"></i>
+
+                            <span>
+                                Bateria
+                            </span>
+
+                            <strong>
+                                37%
+                            </strong>
+
+                            <small>
+                                7,51 kWh armazenados
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flow-core-status">
+                        <span></span>
+                        Armazenamento ativo
+                    </div>
+
+                </div>
+
+
+                <div class="flow-node flow-node-load">
+
+                    <div class="flow-node-icon">
+                        <i data-lucide="house-plug"></i>
+                    </div>
+
+                    <span>Consumo</span>
+
+                    <strong id="telemetriaConsumoFluxo">
+                        7,60
+                        <small>kW</small>
+                    </strong>
+
+                    <em>
+                        Demanda atual
+                    </em>
+
+                </div>
+
+
+                <div class="flow-connector connector-grid"></div>
+                <div class="flow-connector connector-solar"></div>
+                <div class="flow-connector connector-load"></div>
 
             </div>
 
 
+            <div class="energy-flow-footer">
+
+                <div class="flow-summary-card">
+
+                    <div class="flow-summary-icon">
+                        <i data-lucide="repeat-2"></i>
+                    </div>
+
+                    <div>
+                        <span>
+                            Modo de operação
+                        </span>
+
+                        <strong>
+                            Autoconsumo inteligente
+                        </strong>
+
+                        <p>
+                            Prioridade para energia própria e menor
+                            dependência da rede elétrica.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="flow-stat">
+                    <span>Contribuição própria</span>
+                    <strong>35%</strong>
+                </div>
+
+
+                <div class="flow-stat">
+                    <span>Comunicação</span>
+                    <strong class="flow-online-text" id="telemetriaComunicacaoInicio">Sem dados</strong>
+                </div>
+
+
+                <div class="flow-stat">
+                    <span>Eficiência</span>
+                    <strong>94%</strong>
+                </div>
+
+            </div>
+
         </section>
 
+    </div>
+
+</section>
 
 
         <!-- =====================================================
@@ -1411,6 +1563,24 @@
 
 
             <div class="page-container">
+
+                <article
+                    class="panel escondido"
+                    id="semTelemetriaDashboard"
+                    style="margin-bottom:24px;"
+                >
+                    <div class="panel-header">
+                        <div>
+                            <span class="panel-eyebrow">SEM_TELEMETRIA</span>
+                            <h2>Sem dados disponíveis</h2>
+                            <p>
+                                O painel fica vazio até existir pelo menos uma telemetria real vinculada a este cliente.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+
 
 
                 <div class="page-header">
@@ -1438,20 +1608,20 @@
                     <div class="page-header-actions">
 
 
-                        <div class="live-status">
+                        <div class="live-status" id="telemetriaStatusDashboard">
 
                             <span></span>
 
-                            Atualização em tempo real
+                            Verificando telemetria
 
                         </div>
 
 
-                        <button class="date-button">
+                        <button class="date-button" id="dashboardDataAtual" type="button">
 
                             <i data-lucide="calendar-days"></i>
 
-                            31 ago. 2026
+                            Data atual
 
                         </button>
 
@@ -1512,12 +1682,12 @@
                             Consumo atual
                         </span>
 
-                        <div class="kpi-value">
+                        <div class="kpi-value" id="telemetriaConsumoDashboard">
                             3,82
                             <small>kW</small>
                         </div>
 
-                        <p>
+                        <p id="telemetriaAtualizacao">
                             Comparado à média do período
                         </p>
 
@@ -1687,12 +1857,10 @@
 
                         <div class="health-score">
 
-                            <strong>
-                                98%
-                            </strong>
+                            <strong id="telemetriaSaudePercentual">Sem dados</strong>
 
-                            <span>
-                                Operação saudável
+                            <span id="telemetriaSaudeTexto">
+                                Verificando comunicação
                             </span>
 
                         </div>
@@ -1712,9 +1880,7 @@
 
                                 </span>
 
-                                <strong>
-                                    Online
-                                </strong>
+                                <strong id="telemetriaGatewayStatus">Sem dados</strong>
 
                             </div>
 
@@ -1730,9 +1896,7 @@
 
                                 </span>
 
-                                <strong>
-                                    Online
-                                </strong>
+                                <strong id="telemetriaMedidorStatus">Sem dados</strong>
 
                             </div>
 
@@ -1748,9 +1912,7 @@
 
                                 </span>
 
-                                <strong>
-                                    Atualizada
-                                </strong>
+                                <strong id="telemetriaSincronizacaoStatus">Sem dados</strong>
 
                             </div>
 
@@ -2145,381 +2307,1661 @@
 
 
 
+
         <!-- =====================================================
-             HISTÓRICO
+             CONTROLADORES
         ====================================================== -->
 
         <section
             class="pagina escondido"
-            id="paginaHistorico"
+            id="paginaControladores" data-admin-only="true"
         >
-
 
             <div class="page-container">
 
-
-                <div class="page-header">
+                <div class="page-header controllers-page-header">
 
                     <div>
 
                         <span class="page-eyebrow">
-                            ANÁLISE
+                            IOT / INFRAESTRUTURA
                         </span>
 
                         <h1>
-                            Histórico
+                            Controladores
                         </h1>
 
                         <p>
-                            Consulte a evolução do consumo
-                            ao longo do tempo.
+                            Cadastre, provisione e acompanhe os controladores
+                            conectados às instalações OneTouch.
                         </p>
+
+                    </div>
+
+                    <div class="controllers-header-actions">
+
+                        <button
+                            type="button"
+                            class="controllers-btn-secondary"
+                            id="btnAtualizarControladores"
+                        >
+                            <i data-lucide="refresh-cw"></i>
+                            Atualizar
+                        </button>
+
+                        <button
+                            type="button"
+                            class="controllers-btn-primary"
+                            id="btnAbrirNovoControlador"
+                        >
+                            <i data-lucide="plus"></i>
+                            Novo controlador
+                        </button>
 
                     </div>
 
                 </div>
 
 
+                
+                <article
+                    class="panel escondido"
+                    id="adminInstallationRequestsPanel"
+                    style="margin-bottom:24px;"
+                >
 
-                <article class="panel">
+                    <div class="panel-header">
 
+                        <div>
+                            <span class="panel-eyebrow">
+                                NOVOS CLIENTES
+                            </span>
+
+                            <h2>
+                                Solicitações de instalação
+                            </h2>
+
+                            <p>
+                                Analise os dados enviados pelos clientes e crie a estrutura
+                                antes de liberar controladores e telemetria.
+                            </p>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="controllers-btn-secondary"
+                            id="btnAtualizarSolicitacoes"
+                        >
+                            <i data-lucide="refresh-cw"></i>
+                            Atualizar
+                        </button>
+
+                    </div>
+
+                    <div
+                        id="adminInstallationRequestsList"
+                        class="controllers-loading"
+                    >
+                        Carregando solicitações...
+                    </div>
+
+                </article>
+
+
+                <div class="controllers-summary-grid">
+
+                    <article class="controllers-summary-card">
+
+                        <span class="controllers-summary-label">
+                            Total
+                        </span>
+
+                        <strong id="controllersTotal">
+                            0
+                        </strong>
+
+                        <small>
+                            controladores cadastrados
+                        </small>
+
+                    </article>
+
+
+                    <article class="controllers-summary-card">
+
+                        <span class="controllers-summary-label">
+                            Ativos
+                        </span>
+
+                        <strong id="controllersAtivos">
+                            0
+                        </strong>
+
+                        <small>
+                            em operação
+                        </small>
+
+                    </article>
+
+
+                    <article class="controllers-summary-card">
+
+                        <span class="controllers-summary-label">
+                            Aguardando ativação
+                        </span>
+
+                        <strong id="controllersAguardando">
+                            0
+                        </strong>
+
+                        <small>
+                            pendentes de provisionamento
+                        </small>
+
+                    </article>
+
+
+                    <article class="controllers-summary-card">
+
+                        <span class="controllers-summary-label">
+                            Sem comunicação
+                        </span>
+
+                        <strong id="controllersOffline">
+                            0
+                        </strong>
+
+                        <small>
+                            atenção necessária
+                        </small>
+
+                    </article>
+
+                </div>
+
+
+                <article
+                    class="panel controllers-create-panel escondido"
+                    id="painelNovoControlador"
+                >
 
                     <div class="panel-header">
 
                         <div>
 
                             <span class="panel-eyebrow">
-                                ÚLTIMOS 7 DIAS
+                                CADASTRO
                             </span>
 
                             <h2>
-                                Consumo acumulado
+                                Novo controlador
                             </h2>
 
-                            <p>
-                                Resumo energético
-                                do período selecionado.
+                            <p class="controllers-panel-description">
+                                Associe o controlador a um cliente/tenant e a uma instalação/site.
                             </p>
 
                         </div>
 
-                    </div>
-
-
-
-                    <div class="history-summary-grid">
-
-
-                        <div>
-
-                            <span>
-                                Consumo
-                            </span>
-
-                            <strong>
-                                324,8 kWh
-                            </strong>
-
-                        </div>
-
-
-
-                        <div>
-
-                            <span>
-                                Custo estimado
-                            </span>
-
-                            <strong>
-                                R$ 261,40
-                            </strong>
-
-                        </div>
-
-
-
-                        <div>
-
-                            <span>
-                                Média diária
-                            </span>
-
-                            <strong>
-                                46,4 kWh
-                            </strong>
-
-                        </div>
-
-
-
-                        <div>
-
-                            <span>
-                                Economia
-                            </span>
-
-                            <strong>
-                                7,9%
-                            </strong>
-
-                        </div>
-
+                        <button
+                            type="button"
+                            class="controllers-icon-button"
+                            id="btnFecharNovoControlador"
+                            aria-label="Fechar formulário"
+                        >
+                            <i data-lucide="x"></i>
+                        </button>
 
                     </div>
 
+
+                    <form
+                        id="formNovoControlador"
+                        class="controllers-form"
+                    >
+
+                        <div class="controllers-field">
+
+                            <label for="controllerNome">
+                                Nome do controlador
+                            </label>
+
+                            <input
+                                type="text"
+                                id="controllerNome"
+                                placeholder="Ex.: Controlador principal"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="controllers-field">
+
+                            <label for="controllerTenantId">
+                                Tenant ID
+                            </label>
+
+                            <input
+                                type="number"
+                                id="controllerTenantId"
+                                min="1"
+                                step="1"
+                                placeholder="Ex.: 3"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="controllers-field">
+
+                            <label for="controllerSiteId">
+                                Site ID
+                            </label>
+
+                            <input
+                                type="number"
+                                id="controllerSiteId"
+                                min="1"
+                                step="1"
+                                placeholder="Ex.: 3"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="controllers-form-actions">
+
+                            <button
+                                type="button"
+                                class="controllers-btn-secondary"
+                                id="btnCancelarNovoControlador"
+                            >
+                                Cancelar
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="controllers-btn-primary"
+                                id="btnSalvarControlador"
+                            >
+                                <i data-lucide="plus-circle"></i>
+                                Criar controlador
+                            </button>
+
+                        </div>
+
+                    </form>
+
+
+                    <p
+                        class="controllers-form-message"
+                        id="mensagemControlador"
+                    ></p>
 
                 </article>
 
 
-            </div>
+                <article
+                    class="controllers-activation-card escondido"
+                    id="cardAtivacaoControlador"
+                >
 
+                    <div class="controllers-activation-icon">
+                        <i data-lucide="key-round"></i>
+                    </div>
 
-        </section>
+                    <div class="controllers-activation-content">
 
-
-
-        <!-- =====================================================
-             ALERTAS
-        ====================================================== -->
-
-        <section
-            class="pagina escondido"
-            id="paginaAlertas"
-        >
-
-
-            <div class="page-container">
-
-
-                <div class="page-header">
-
-                    <div>
-
-                        <span class="page-eyebrow">
-                            MONITORAMENTO
+                        <span>
+                            CÓDIGO DE ATIVAÇÃO GERADO
                         </span>
 
-                        <h1>
-                            Alertas
-                        </h1>
+                        <h3 id="ativacaoControllerId">
+                            -
+                        </h3>
 
                         <p>
-                            Eventos que merecem atenção
-                            da operação.
+                            Use este código no provisionamento do dispositivo.
+                            Ele é temporário e deve ser tratado como informação sensível.
                         </p>
+
+                        <div class="controllers-activation-code-row">
+
+                            <code id="ativacaoCodigo">
+                                -
+                            </code>
+
+                            <button
+                                type="button"
+                                class="controllers-copy-button"
+                                id="btnCopiarAtivacao"
+                            >
+                                <i data-lucide="copy"></i>
+                                Copiar código
+                            </button>
+
+                        </div>
 
                     </div>
 
-                </div>
+                </article>
 
 
-
-                <div class="alerts-list">
-
-
-                    <article class="alert-card warning">
-
-                        <div class="alert-icon">
-
-                            <i data-lucide="triangle-alert"></i>
-
-                        </div>
-
-                        <div>
-
-                            <span class="alert-time">
-                                Hoje, 14:18
-                            </span>
-
-                            <h3>
-                                Pico de demanda identificado
-                            </h3>
-
-                            <p>
-                                A potência ultrapassou a média
-                                operacional durante 12 minutos.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <article class="alert-card info">
-
-                        <div class="alert-icon">
-
-                            <i data-lucide="info"></i>
-
-                        </div>
-
-                        <div>
-
-                            <span class="alert-time">
-                                Hoje, 11:02
-                            </span>
-
-                            <h3>
-                                Sincronização concluída
-                            </h3>
-
-                            <p>
-                                Todos os dados dos equipamentos
-                                foram atualizados com sucesso.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <article class="alert-card success">
-
-                        <div class="alert-icon">
-
-                            <i data-lucide="circle-check"></i>
-
-                        </div>
-
-                        <div>
-
-                            <span class="alert-time">
-                                Ontem, 18:40
-                            </span>
-
-                            <h3>
-                                Meta de economia atingida
-                            </h3>
-
-                            <p>
-                                O consumo ficou abaixo da referência
-                                definida para o período.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =====================================================
-             EMPRESA
-        ====================================================== -->
-
-        <section
-            class="pagina escondido"
-            id="paginaEmpresa"
-        >
-
-
-            <div class="page-container">
-
-
-                <div class="page-header">
-
-                    <div>
-
-                        <span class="page-eyebrow">
-                            CONTA
-                        </span>
-
-                        <h1>
-                            Empresa
-                        </h1>
-
-                        <p>
-                            Informações da conta
-                            e da instalação monitorada.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <article class="panel">
-
+                <article class="panel controllers-list-panel">
 
                     <div class="panel-header">
 
                         <div>
 
                             <span class="panel-eyebrow">
-                                DADOS DA CONTA
+                                DISPOSITIVOS
                             </span>
 
                             <h2>
-                                Responsável
+                                Controladores cadastrados
                             </h2>
 
                         </div>
 
-                    </div>
-
-
-
-                    <div class="history-summary-grid">
-
-
-                        <div>
-
-                            <span>
-                                ID do usuário
-                            </span>
-
-                            <strong id="usuarioId"></strong>
-
-                        </div>
-
-
-
-                        <div>
-
-                            <span>
-                                Telefone
-                            </span>
-
-                            <strong id="usuarioTelefone"></strong>
-
-                        </div>
-
-
-
-                        <div>
-
-                            <span>
-                                Data de cadastro
-                            </span>
-
-                            <strong id="usuarioDataRegistro"></strong>
-
-                        </div>
-
+                        <span
+                            class="controllers-last-refresh"
+                            id="controllersUltimaAtualizacao"
+                        >
+                            Aguardando atualização
+                        </span>
 
                     </div>
 
+
+                    <div
+                        class="controllers-loading"
+                        id="controllersLoading"
+                    >
+                        <i data-lucide="loader-circle"></i>
+                        Carregando controladores...
+                    </div>
+
+
+                    <div
+                        class="controllers-empty escondido"
+                        id="controllersEmpty"
+                    >
+                        <i data-lucide="router"></i>
+
+                        <strong>
+                            Nenhum controlador encontrado
+                        </strong>
+
+                        <span>
+                            Crie o primeiro controlador para iniciar o provisionamento.
+                        </span>
+                    </div>
+
+
+                    <div
+                        class="controllers-table-wrapper escondido"
+                        id="controllersTableWrapper"
+                    >
+
+                        <table class="controllers-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Controlador</th>
+                                    <th>Instalação</th>
+                                    <th>Status</th>
+                                    <th>Firmware</th>
+                                    <th>Última comunicação</th>
+                                    <th></th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="controllersTableBody">
+                            </tbody>
+
+                        </table>
+
+                    </div>
 
                 </article>
 
-
             </div>
-
 
         </section>
 
 
+        <!-- =====================================================
+     HISTÓRICO
+====================================================== -->
+
+<section
+    class="pagina escondido"
+    id="paginaHistorico"
+>
+
+    <div class="page-container">
+
+        <div class="page-header">
+
+            <div>
+                <span class="page-eyebrow">
+                    TELEMETRIA REAL
+                </span>
+
+                <h1>
+                    Histórico
+                </h1>
+
+                <p>
+                    Consulte as leituras reais recebidas dos controladores
+                    e armazenadas no banco de dados.
+                </p>
+            </div>
+
+            <div class="history-live-status" id="historicoStatus">
+                <span></span>
+                Sincronizado com o banco
+            </div>
+
+        </div>
+
+
+        <div class="history-toolbar">
+
+            <div class="period-filter history-period-filter">
+
+                <button
+                    type="button"
+                    class="period-button"
+                    data-history-period="1"
+                >
+                    Hoje
+                </button>
+
+                <button
+                    type="button"
+                    class="period-button active"
+                    data-history-period="7"
+                >
+                    7 dias
+                </button>
+
+                <button
+                    type="button"
+                    class="period-button"
+                    data-history-period="30"
+                >
+                    30 dias
+                </button>
+
+                <button
+                    type="button"
+                    class="period-button"
+                    data-history-period="365"
+                >
+                    Ano
+                </button>
+
+            </div>
+
+            <button
+                type="button"
+                class="secondary-action"
+                id="historicoPeriodoLabel"
+                disabled
+            >
+                <i data-lucide="calendar-days"></i>
+                Últimos 7 dias
+            </button>
+
+        </div>
+
+
+        <div class="history-kpi-grid">
+
+            <article class="history-kpi-card">
+
+                <div class="history-kpi-icon consumption">
+                    <i data-lucide="gauge"></i>
+                </div>
+
+                <div>
+                    <span>
+                        Potência mais recente
+                    </span>
+
+                    <strong id="historicoPotenciaAtual">
+                        --
+                        <small>kW</small>
+                    </strong>
+
+                    <p id="historicoPotenciaAtualInfo">
+                        Aguardando telemetria
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="history-kpi-card">
+
+                <div class="history-kpi-icon solar">
+                    <i data-lucide="activity"></i>
+                </div>
+
+                <div>
+                    <span>
+                        Potência máxima
+                    </span>
+
+                    <strong id="historicoPotenciaMaxima">
+                        --
+                        <small>kW</small>
+                    </strong>
+
+                    <p>
+                        Maior leitura do período
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="history-kpi-card">
+
+                <div class="history-kpi-icon grid">
+                    <i data-lucide="database"></i>
+                </div>
+
+                <div>
+                    <span>
+                        Energia importada
+                    </span>
+
+                    <strong id="historicoEnergiaImportada">
+                        --
+                        <small>kWh</small>
+                    </strong>
+
+                    <p>
+                        Último valor acumulado informado
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="history-kpi-card">
+
+                <div class="history-kpi-icon saving">
+                    <i data-lucide="list-checks"></i>
+                </div>
+
+                <div>
+                    <span>
+                        Leituras recebidas
+                    </span>
+
+                    <strong id="historicoTotalLeituras">
+                        0
+                    </strong>
+
+                    <p>
+                        Registros reais no período
+                    </p>
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <div class="history-main-grid">
+
+            <article class="panel history-chart-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-eyebrow">
+                            POTÊNCIA
+                        </span>
+
+                        <h2>
+                            Evolução das leituras
+                        </h2>
+
+                        <p>
+                            Potência total reportada pelos equipamentos ao longo do período.
+                        </p>
+                    </div>
+
+                    <div class="history-chart-legend">
+                        <span class="legend-consumption">
+                            Consumo medido
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="history-chart-container">
+                    <canvas id="historyEnergyChart"></canvas>
+                </div>
+
+                <div
+                    id="historicoSemDados"
+                    class="controllers-empty escondido"
+                >
+                    <i data-lucide="database-zap"></i>
+                    <strong>Nenhuma telemetria no período</strong>
+                    <span>
+                        Assim que um controlador enviar dados, as leituras aparecerão aqui.
+                    </span>
+                </div>
+
+            </article>
+
+
+            <article class="panel history-insights-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-eyebrow">
+                            ÚLTIMA LEITURA
+                        </span>
+
+                        <h2>
+                            Detalhes da telemetria
+                        </h2>
+
+                        <p>
+                            Informações técnicas do registro mais recente.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="history-insight-list">
+
+                    <div>
+                        <div class="history-insight-icon">
+                            <i data-lucide="router"></i>
+                        </div>
+
+                        <div>
+                            <span>
+                                Controlador
+                            </span>
+
+                            <strong id="historicoControlador">
+                                --
+                            </strong>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <div class="history-insight-icon">
+                            <i data-lucide="cpu"></i>
+                        </div>
+
+                        <div>
+                            <span>
+                                Dispositivo
+                            </span>
+
+                            <strong id="historicoDispositivo">
+                                --
+                            </strong>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <div class="history-insight-icon">
+                            <i data-lucide="waves"></i>
+                        </div>
+
+                        <div>
+                            <span>
+                                Frequência
+                            </span>
+
+                            <strong id="historicoFrequencia">
+                                --
+                            </strong>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <div class="history-insight-icon">
+                            <i data-lucide="shield-check"></i>
+                        </div>
+
+                        <div>
+                            <span>
+                                Qualidade
+                            </span>
+
+                            <strong id="historicoQualidade">
+                                --
+                            </strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- =====================================================
+     ALERTAS
+====================================================== -->
+
+<section
+    class="pagina escondido"
+    id="paginaAlertas"
+>
+
+    <div class="page-container">
+
+        <div class="page-header">
+
+            <div>
+                <span class="page-eyebrow">
+                    MONITORAMENTO REAL
+                </span>
+
+                <h1>
+                    Alertas
+                </h1>
+
+                <p>
+                    Eventos gerados a partir do estado dos controladores
+                    e das telemetrias registradas no banco.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="primary-action"
+                id="btnAtualizarAlertas"
+            >
+                <i data-lucide="refresh-cw"></i>
+                Atualizar alertas
+            </button>
+
+        </div>
+
+
+        <div class="alerts-summary-grid">
+
+            <article class="alert-summary-card critical">
+
+                <div>
+                    <span>
+                        Críticos
+                    </span>
+
+                    <strong id="alertasCriticos">
+                        0
+                    </strong>
+                </div>
+
+                <i data-lucide="octagon-alert"></i>
+
+            </article>
+
+
+            <article class="alert-summary-card warning">
+
+                <div>
+                    <span>
+                        Atenção
+                    </span>
+
+                    <strong id="alertasAtencao">
+                        0
+                    </strong>
+                </div>
+
+                <i data-lucide="triangle-alert"></i>
+
+            </article>
+
+
+            <article class="alert-summary-card resolved">
+
+                <div>
+                    <span>
+                        Informativos
+                    </span>
+
+                    <strong id="alertasInformativos">
+                        0
+                    </strong>
+                </div>
+
+                <i data-lucide="circle-check-big"></i>
+
+            </article>
+
+
+            <article class="alert-summary-card total">
+
+                <div>
+                    <span>
+                        Total atual
+                    </span>
+
+                    <strong id="alertasTotal">
+                        0
+                    </strong>
+                </div>
+
+                <i data-lucide="bell-ring"></i>
+
+            </article>
+
+        </div>
+
+
+        <div class="alerts-toolbar">
+
+            <div class="period-filter alerts-filter">
+
+                <button
+                    type="button"
+                    class="period-button active"
+                    data-alert-filter="todos"
+                >
+                    Todos
+                </button>
+
+                <button
+                    type="button"
+                    class="period-button"
+                    data-alert-filter="critical"
+                >
+                    Críticos
+                </button>
+
+                <button
+                    type="button"
+                    class="period-button"
+                    data-alert-filter="warning"
+                >
+                    Atenção
+                </button>
+
+                <button
+                    type="button"
+                    class="period-button"
+                    data-alert-filter="info"
+                >
+                    Informativos
+                </button>
+
+            </div>
+
+            <span
+                class="alerts-updated"
+                id="alertasAtualizadosEm"
+            >
+                Aguardando atualização
+            </span>
+
+        </div>
+
+
+        <div
+            class="alerts-professional-list"
+            id="alertasLista"
+        >
+
+            <div
+                class="controllers-loading"
+                id="alertasLoading"
+            >
+                <i data-lucide="loader-circle"></i>
+                Carregando alertas...
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- =====================================================
+     SUPORTE
+====================================================== -->
+
+<section
+    class="pagina escondido"
+    id="paginaSuporte"
+>
+
+    <div class="page-container">
+
+        <div class="page-header">
+
+            <div>
+                <span class="page-eyebrow">
+                    ATENDIMENTO
+                </span>
+
+                <h1>
+                    Suporte
+                </h1>
+
+                <p>
+                    Abra um chamado, consulte dúvidas frequentes
+                    ou fale com a equipe OneTouch.
+                </p>
+            </div>
+
+            <div class="support-status">
+                <span></span>
+                Atendimento disponível
+            </div>
+
+        </div>
+
+
+        <div class="support-top-grid">
+
+            <article class="support-contact-card">
+
+                <div class="support-contact-icon">
+                    <i data-lucide="headset"></i>
+                </div>
+
+                <span>
+                    Contato de suporte
+                </span>
+
+                <strong>
+                    (11) 96452-7818
+                </strong>
+
+                <p>
+                    Atendimento de segunda a sexta,
+                    das 08h às 18h.
+                </p>
+
+            </article>
+
+
+            <article class="support-contact-card">
+
+                <div class="support-contact-icon">
+                    <i data-lucide="clock-3"></i>
+                </div>
+
+                <span>
+                    Horário de atendimento
+                </span>
+
+                <strong>
+                    08h às 18h
+                </strong>
+
+                <p>
+                    Chamados enviados fora do horário
+                    ficam registrados para o próximo período.
+                </p>
+
+            </article>
+
+
+            <article class="support-contact-card">
+
+                <div class="support-contact-icon">
+                    <i data-lucide="map-pin"></i>
+                </div>
+
+                <span>
+                    Local da empresa
+                </span>
+
+                <strong>
+                    Av. Vereador José Diniz, 3720
+                </strong>
+
+                <p>
+                    Atendimento e operação central
+                    da OneTouch Energy.
+                </p>
+
+            </article>
+
+        </div>
+
+
+        <div class="support-main-grid">
+
+            <article class="panel support-ticket-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-eyebrow">
+                            NOVO CHAMADO
+                        </span>
+
+                        <h2>
+                            Como podemos ajudar?
+                        </h2>
+
+                        <p>
+                            Descreva o problema para deixar
+                            o atendimento mais rápido.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form
+                    class="support-form"
+                    id="supportForm"
+                >
+
+                    <div class="support-form-grid">
+
+                        <div class="campo">
+
+                            <label for="supportCategory">
+                                Categoria
+                            </label>
+
+                            <div class="support-select-wrapper">
+                                <i data-lucide="list-filter"></i>
+
+                                <select id="supportCategory" required>
+                                    <option value="">
+                                        Selecione uma categoria
+                                    </option>
+
+                                    <option>
+                                        Equipamento
+                                    </option>
+
+                                    <option>
+                                        Comunicação
+                                    </option>
+
+                                    <option>
+                                        Dados / leitura
+                                    </option>
+
+                                    <option>
+                                        Acesso à plataforma
+                                    </option>
+
+                                    <option>
+                                        Outro
+                                    </option>
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="supportPriority">
+                                Prioridade
+                            </label>
+
+                            <div class="support-select-wrapper">
+                                <i data-lucide="flag"></i>
+
+                                <select id="supportPriority" required>
+                                    <option value="">
+                                        Selecione
+                                    </option>
+
+                                    <option>
+                                        Normal
+                                    </option>
+
+                                    <option>
+                                        Alta
+                                    </option>
+
+                                    <option>
+                                        Urgente
+                                    </option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="supportSubject">
+                            Assunto
+                        </label>
+
+                        <div class="input-wrapper">
+                            <i data-lucide="message-square-text"></i>
+
+                            <input
+                                type="text"
+                                id="supportSubject"
+                                placeholder="Ex.: Medidor sem atualização"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="supportDescription">
+                            Descrição
+                        </label>
+
+                        <textarea
+                            id="supportDescription"
+                            class="support-textarea"
+                            placeholder="Conte o que está acontecendo, quando começou e qual equipamento foi afetado."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="support-form-footer">
+
+                        <span>
+                            <i data-lucide="shield-check"></i>
+                            As informações ficam vinculadas ao atendimento.
+                        </span>
+
+                        <button
+                            type="submit"
+                            class="primary-action support-submit"
+                        >
+                            <i data-lucide="send"></i>
+                            Enviar chamado
+                        </button>
+
+                    </div>
+
+                    <p
+                        class="support-message"
+                        id="supportMessage"
+                    ></p>
+
+                </form>
+
+            </article>
+
+
+            <article class="panel support-faq-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-eyebrow">
+                            FAQ
+                        </span>
+
+                        <h2>
+                            Dúvidas frequentes
+                        </h2>
+
+                        <p>
+                            Respostas rápidas para situações
+                            comuns da plataforma.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="support-faq-list">
+
+                    <details open>
+                        <summary>
+                            Por que um equipamento pode aparecer offline?
+                        </summary>
+
+                        <p>
+                            Pode ocorrer perda temporária de comunicação,
+                            reinicialização do dispositivo ou indisponibilidade
+                            da conexão local.
+                        </p>
+                    </details>
+
+
+                    <details>
+                        <summary>
+                            Quanto tempo leva para os dados atualizarem?
+                        </summary>
+
+                        <p>
+                            A atualização depende do intervalo de leitura
+                            definido para os equipamentos e da conexão
+                            com o serviço de dados.
+                        </p>
+                    </details>
+
+
+                    <details>
+                        <summary>
+                            O que fazer quando uma leitura parece incorreta?
+                        </summary>
+
+                        <p>
+                            Verifique o horário da última sincronização
+                            e abra um chamado informando o equipamento
+                            e o período da leitura.
+                        </p>
+                    </details>
+
+
+                    <details>
+                        <summary>
+                            Como falar diretamente com o suporte?
+                        </summary>
+
+                        <p>
+                            O contato informado pela OneTouch é
+                            (11) 96452-7818, com atendimento das 08h às 18h.
+                        </p>
+                    </details>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     EMPRESA
+====================================================== -->
+
+<section
+    class="pagina escondido"
+    id="paginaEmpresa"
+>
+
+    <div class="page-container">
+
+        <div class="page-header">
+
+            <div>
+                <span class="page-eyebrow">
+                    EMPRESA
+                </span>
+
+                <h1>
+                    OneTouch Energy
+                </h1>
+
+                <p>
+                    Informações institucionais, contatos
+                    e dados da operação.
+                </p>
+            </div>
+
+            <div class="company-status">
+                <span></span>
+                Operação ativa
+            </div>
+
+        </div>
+
+
+        <div class="company-hero">
+
+            <div class="company-logo-placeholder">
+                <img src="logo-onetouch-icon.png" alt="OneTouch" style="width:72%;height:72%;object-fit:contain;display:block;">
+            </div>
+
+            <div class="company-hero-content">
+
+                <span class="panel-eyebrow">
+                    PERFIL DA EMPRESA
+                </span>
+
+                <h2>
+                    OneTouch Energy
+                </h2>
+
+                <p>
+                    Plataforma de gestão e monitoramento
+                    inteligente de energia.
+                </p>
+
+            </div>
+
+            <div class="company-hero-badge">
+                <i data-lucide="shield-check"></i>
+                Ambiente monitorado
+            </div>
+
+        </div>
+
+
+        <div class="company-info-grid">
+
+            <article class="company-info-card">
+
+                <div class="company-info-icon">
+                    <i data-lucide="map-pin"></i>
+                </div>
+
+                <span>
+                    Local da empresa
+                </span>
+
+                <strong>
+                    Av. Vereador José Diniz, 3720
+                </strong>
+
+            </article>
+
+
+            <article class="company-info-card">
+
+                <div class="company-info-icon">
+                    <i data-lucide="phone"></i>
+                </div>
+
+                <span>
+                    Contato
+                </span>
+
+                <strong>
+                    (11) 96452-7818
+                </strong>
+
+            </article>
+
+
+            <article class="company-info-card">
+
+                <div class="company-info-icon">
+                    <i data-lucide="clock-3"></i>
+                </div>
+
+                <span>
+                    Horário de funcionamento
+                </span>
+
+                <strong>
+                    08h às 18h
+                </strong>
+
+            </article>
+
+
+            <article class="company-info-card">
+
+                <div class="company-info-icon">
+                    <i data-lucide="headset"></i>
+                </div>
+
+                <span>
+                    Suporte
+                </span>
+
+                <strong>
+                    (11) 96452-7818
+                </strong>
+
+            </article>
+
+        </div>
+
+
+        <div class="company-bottom-grid">
+
+            <article class="panel">
+
+                <div class="panel-header">
+                    <div>
+                        <span class="panel-eyebrow">
+                            RESPONSÁVEL
+                        </span>
+
+                        <h2>
+                            Dados da conta
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="history-summary-grid">
+
+                    <div>
+                        <span>
+                            ID do usuário
+                        </span>
+
+                        <strong id="usuarioId"></strong>
+                    </div>
+
+                    <div>
+                        <span>
+                            Telefone
+                        </span>
+
+                        <strong id="usuarioTelefone"></strong>
+                    </div>
+
+                    <div>
+                        <span>
+                            Data de cadastro
+                        </span>
+
+                        <strong id="usuarioDataRegistro"></strong>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     CONFIGURAÇÕES
+=========================================== -->
+
+<section
+    class="pagina escondido"
+    id="paginaConfiguracoes"
+>
+
+    <div class="page-container">
+
+        <div class="page-header">
+
+            <div>
+                <span class="page-eyebrow">
+                    SISTEMA
+                </span>
+
+                <h1>
+                    Configurações
+                </h1>
+
+                <p>
+                    Integrações, ambiente e preferências
+                    da plataforma.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="settings-grid">
+
+            <article class="settings-card">
+
+                <div class="settings-icon">
+                    <i data-lucide="cloud-cog"></i>
+                </div>
+
+                <span>
+                    Infraestrutura
+                </span>
+
+                <strong>
+                    Cloud
+                </strong>
+
+                <p>
+                    Ambiente preparado para sincronização
+                    com serviços externos.
+                </p>
+
+            </article>
+
+
+            <article class="settings-card">
+
+                <div class="settings-icon warning">
+                    <i data-lucide="plug-zap"></i>
+                </div>
+
+                <span>
+                    Integração de dados
+                </span>
+
+                <strong>
+                    Aguardando API
+                </strong>
+
+                <p>
+                    Credenciais e endpoints ainda serão
+                    conectados ao sistema.
+                </p>
+
+            </article>
+
+
+            <article class="settings-card">
+
+                <div class="settings-icon">
+                    <i data-lucide="refresh-cw"></i>
+                </div>
+
+                <span>
+                    Sincronização
+                </span>
+
+                <strong>
+                    Em configuração
+                </strong>
+
+                <p>
+                    Os dados energéticos serão atualizados
+                    automaticamente após a integração.
+                </p>
+
+            </article>
+
+        </div>
+
+
+        <article class="panel settings-support-panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <span class="panel-eyebrow">
+                        SUPORTE
+                    </span>
+
+                    <h2>
+                        Atendimento OneTouch
+                    </h2>
+
+                    <p>
+                        Informações de contato para suporte
+                        e atendimento operacional.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="settings-support-grid">
+
+                <div>
+                    <i data-lucide="headset"></i>
+
+                    <span>
+                        Suporte
+                    </span>
+
+                    <strong>
+                        (11) 96452-7818
+                    </strong>
+                </div>
+
+                <div>
+                    <i data-lucide="clock-3"></i>
+
+                    <span>
+                        Horário
+                    </span>
+
+                    <strong>
+                        08h às 18h
+                    </strong>
+                </div>
+
+                <div>
+                    <i data-lucide="map-pin"></i>
+
+                    <span>
+                        Endereço
+                    </span>
+
+                    <strong>
+                        Av. Vereador José Diniz, 3720
+                    </strong>
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
     </main>
 
 
@@ -2983,9 +4425,11 @@
             }
 
 
+
+/* Gráfico do histórico é alimentado pelo script.js com dados reais. */
+
         }
     );
-
 
 </script>
 
