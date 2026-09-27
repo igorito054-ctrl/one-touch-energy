@@ -4316,12 +4316,26 @@ function aplicarTelemetriaRealNaTela(
             2
         );
 
-    const solarKw =
-        formatarValorTelemetria(
-            dados.solar_power,
-            1000,
-            2
+    let solarValor =
+        valorNumericoTelemetria(
+            dados.solar_power
         );
+
+    const solarKw =
+        solarValor !== null
+            ? (
+                solarValor > 50
+                    ? solarValor / 1000
+                    : solarValor
+              )
+                .toLocaleString(
+                    "pt-BR",
+                    {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    }
+                )
+            : null;
 
     const consumoKw =
         formatarValorTelemetria(
@@ -4330,12 +4344,23 @@ function aplicarTelemetriaRealNaTela(
             2
         );
 
-    const bateria =
-        formatarValorTelemetria(
-            dados.battery_percent,
-            1,
-            0
+    let bateriaValor =
+        valorNumericoTelemetria(
+            dados.battery_percent
         );
+
+    // Alguns equipamentos enviam SOC como 0.96 em vez de 96.
+    if (
+        bateriaValor !== null &&
+        bateriaValor <= 1
+    ) {
+        bateriaValor = bateriaValor * 100;
+    }
+
+    const bateria =
+        bateriaValor !== null
+            ? Math.round(bateriaValor)
+            : null;
 
     const consumoHoje =
         formatarValorTelemetria(
@@ -4797,12 +4822,23 @@ function aplicarEquipamentosReais(
         );
 
 
-    const bateria =
-        formatarValorTelemetria(
-            dados.battery_percent,
-            1,
-            0
+    let bateriaValor =
+        valorNumericoTelemetria(
+            dados.battery_percent
         );
+
+    // Alguns equipamentos enviam SOC como 0.96 em vez de 96.
+    if (
+        bateriaValor !== null &&
+        bateriaValor <= 1
+    ) {
+        bateriaValor = bateriaValor * 100;
+    }
+
+    const bateria =
+        bateriaValor !== null
+            ? Math.round(bateriaValor)
+            : null;
 
 
     const serial =
@@ -7316,7 +7352,10 @@ async function sincronizarEPCubeAgora(
                 ? dados.resultado.telemetria
                 : {};
 
+                console.log("DADOS EPCUBE BRUTO >>>", dados);
+console.log("TELEMETRIA EPCUBE >>>", telemetria);
 
+           console.log("RETORNO COMPLETO EPCUBE:", JSON.stringify(dados, null, 2));
         const formatar =
             function(valor, sufixo) {
 
@@ -7342,6 +7381,9 @@ async function sincronizarEPCubeAgora(
 
             };
 
+console.log("========== TELEMETRIA EPCUBE ==========");
+console.log(JSON.stringify(telemetria, null, 2));
+console.log("========================================");
 
         window.alert(
             "EPCUBE SINCRONIZADO ✅\n\n" +

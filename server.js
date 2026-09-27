@@ -11,6 +11,8 @@ const crypto = require("crypto");
 
 const app = express();
 
+app.set('trust proxy', 1);
+
 const PORT = Number(process.env.PORT) || 3000;
 
 app.use(express.static(path.join(__dirname)));
@@ -4629,6 +4631,13 @@ async function carregarSnapshotEPCube(
             }
         );
 
+console.log("========== RETORNO EPCUBE HOME ==========");
+console.log(JSON.stringify(home, null, 2));
+console.log("=========================================");
+
+console.log("========== RETORNO EPCUBE HOME DATA ==========");
+console.log(JSON.stringify(home?.data ?? home, null, 2));
+console.log("==============================================");
 
     const homeData =
         home.data &&
@@ -4751,7 +4760,11 @@ async function carregarSnapshotEPCube(
 
         battery_percent:
             numeroEPCube(
-                homeData.batterySoc
+                homeData.batterySoc ??
+                homeData.batterySOC ??
+                homeData.battery_soc ??
+                homeData.soc ??
+                homeData.batteryPercent
             ),
 
         battery_power:
@@ -4766,7 +4779,19 @@ async function carregarSnapshotEPCube(
 
         solar_power:
             numeroEPCube(
-                homeData.solarFlow
+                homeData.solarFlow ??
+                homeData.solarPower ??
+                homeData.pvPower ??
+                homeData.pv_power ??
+                homeData.solar ??
+                homeData.pv ??
+                homeData.generationPower ??
+                electricityData.solarPower ??
+                electricityData.solarElectricity ??
+                electricityData.solarEnergy ??
+                electricityData.pvPower ??
+                homeData.solarElectricity ??
+                homeData.solarEnergy
             ),
 
         power_total:
@@ -4801,7 +4826,9 @@ async function carregarSnapshotEPCube(
         solar_electricity:
             numeroEPCube(
                 electricityData.solarElectricity ??
-                homeData.solarElectricity
+                electricityData.solarEnergy ??
+                homeData.solarElectricity ??
+                homeData.solarEnergy
             ),
 
         self_help_rate:
@@ -5057,7 +5084,8 @@ async function sincronizarEPCube(
         await carregarSnapshotEPCube(
             controlador
         );
-
+console.log("RETORNO EPCUBE COMPLETO:");
+console.log(JSON.stringify(telemetria, null, 2));
 
     const gravacao =
         await gravarSnapshotEPCube(
